@@ -20,6 +20,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
 }
 
 header {
@@ -42,14 +43,14 @@ header {
 }
 
 h3 {
-    font-size: 32px;
+    font-size: 31px;
     margin: 0;
     margin-top: 10px;
     font-family: 'Caveat Brush', cursive;
 }
 
 h1 {
-    font-size: 44px;
+    font-size: 42px;
     font-family: 'ApeMount', 'Caveat Brush', cursive;
 
     margin: 0;
@@ -64,4 +65,18 @@ h1 {
 
 .right-fan>img {
     transform: rotateY(180deg);
+}
+
+.footer {
+    width: 100vw;
+
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+    background-color: #212121;
+    color: #FFF7F8;
+    font-family: 'Caveat Brush', cursive;
 }
