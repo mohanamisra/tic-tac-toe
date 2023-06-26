@@ -67,6 +67,24 @@ h1 {
     transform: rotateY(180deg);
 }
 
+/* GAMEBOARD STYLING */
+.gameboard {
+    margin-top: -40px;
+}
+
+.row {
+    display: flex;
+    margin: 0;
+}
+
+.box {
+    border: 1px solid black;
+    width: 90px;
+    height: 90px;
+}
+
+
+/* FOOTER STYLING */
 .footer {
     width: 100vw;
 
