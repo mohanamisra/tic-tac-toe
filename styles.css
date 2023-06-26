@@ -1,0 +1,8 @@
+@font-face {
+    font-family: ApeMount;
+    src: url('fonts/ApeMount-eZj0O.otf');
+}
+
+h1 {
+    font-family: ApeMount;
+}
