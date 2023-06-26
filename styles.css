@@ -81,6 +81,15 @@ h1 {
     border: 1px solid black;
     width: 90px;
     height: 90px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fist {
+    width: 55px;
+    height: 46px;
 }
 
 /* BUTTONS STYLING */
