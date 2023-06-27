@@ -208,6 +208,10 @@ img.master {
     html::-webkit-scrollbar { 
         display: none;  /* Safari and Chrome */
     }
+
+    .container {
+        background-image: linear-gradient(#D1495b, #FFF7F8, #FFF7F8, #FFF7F8, #FFF7F8);
+    }
     
     .heading {
         flex-direction: row;
@@ -241,8 +245,8 @@ img.master {
     }
 
     .box:hover {
-        background-color: #bcb8b8;
-        opacity: 50%;
+        background-color: #D1495B;
+        opacity: 20%;
     }
 
     .try-button {
