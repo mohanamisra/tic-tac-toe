@@ -134,7 +134,8 @@ function changeQuote() {
   let length = quotes.length;
   let index = Math.floor(Math.random() * (length - 1));
   quoteText.textContent = quotes[index];
-  console.log(index);
+  quoteSound.play();
+  
 }
 
 // MUSIC PLAYING CODE
@@ -142,6 +143,7 @@ function changeQuote() {
 let musicButton = document.getElementsByClassName('music-button')[0];
 let bgMusic = new Audio('music/bgmusic.mp3');
 let winMusic = new Audio('music/win.mp3');
+let quoteSound = new Audio('music/quote.mp3');
 
 musicButton.addEventListener('click', toggleMusic);
 
