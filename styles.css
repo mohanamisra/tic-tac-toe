@@ -240,6 +240,11 @@ img.master {
         border: 10px solid #D1495B;
     }
 
+    .box:hover {
+        background-color: #bcb8b8;
+        opacity: 50%;
+    }
+
     .try-button {
         width: 275px;
         height: 80px;
@@ -274,4 +279,9 @@ img.master {
         min-height: 90px;
         font-size: 48px;
     } 
+
+    .fist {
+        width: 100px;
+        height: auto;
+    }
 }
