@@ -8,8 +8,8 @@ gameboard.addEventListener('click', function playerMove(event) {
   let clickedBox = event.target;
   if (clickedBox.classList.contains('box') && clickedBox.innerHTML === '') {
     clickedBox.innerHTML += fist;
+    aiMove();
   }
-  aiMove();
 });
 
 function aiMove() {
