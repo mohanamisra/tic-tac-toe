@@ -156,8 +156,9 @@ button {
     width: 141px;
 }
 
+/* QUOTE GENERATOR STYLING */
+
 .quote-section {
-    /* border: 1px solid red; */
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -183,10 +184,6 @@ img.master {
 }
 
 
-/* QUOTE GENERATOR STYLING */
-
-
-
 /* FOOTER STYLING */
 .footer {
     width: 100vw;
@@ -200,4 +197,81 @@ img.master {
     background-color: #212121;
     color: #FFF7F8;
     font-family: 'Caveat Brush', cursive;
+}
+
+/* DESKTOP STYLES */
+@media (min-width: 1000px) {
+    html {
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        scrollbar-width: none;  /* Firefox */
+    }
+    html::-webkit-scrollbar { 
+        display: none;  /* Safari and Chrome */
+    }
+    
+    .heading {
+        flex-direction: row;
+        font-size: 108px;
+        gap: 72px;
+    }
+
+    h1, h3 {
+        font-size: 108px;
+        font-family: 'ApeMount', 'Caveat Brush', cursive;
+    }
+
+    .left-fan>img, .right-fan>img {
+        margin: 0;
+        margin-top: 19px;
+        max-width: 150px;
+    }
+    
+    .right-fan>img {
+        transform: rotateY(180deg);
+    }
+
+    .gameboard {
+        margin-top: 64px;
+    }
+
+    .box {
+        width: 175px;
+        height: 175px;
+        border: 10px solid #D1495B;
+    }
+
+    .try-button {
+        width: 275px;
+        height: 80px;
+        font-size: 72px;
+        margin-top: 54px;
+    }
+
+    .footer {
+        height: 48px;
+        font-size: 36px;
+    }
+
+    .music-button, .quote-button {
+        width: 248px;
+        height: 60px;
+        font-size: 44px;
+    }
+
+    .quote-section {
+        justify-content: space-around;
+        gap: 300px;
+        margin-top: 72px;
+    }
+    
+    img.master {
+        width: 400px;
+        height: 400px;
+    }
+    
+    .quotes {
+        width: 400px;
+        min-height: 90px;
+        font-size: 48px;
+    } 
 }
