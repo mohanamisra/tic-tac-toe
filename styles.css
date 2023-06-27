@@ -112,21 +112,46 @@ h1 {
 
 /* BUTTONS STYLING */
 
-.try-button {
-    width: 141px;
-    height: 44px;
+button {
     border-radius: 30px;
     border: none;
     filter: drop-shadow(3px 3px 4px #212121);
-    background-color: #D1495B;
     color: #FFF7F8;
-    font-size: 38px;
     font-family: 'Caveat Brush', cursive;
+    padding-bottom: 7px;
+}
+
+.try-button {
+    width: 141px;
+    height: 44px;
+    background-color: #D1495B;
+    font-size: 38px;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 7px;
+
+    margin-bottom: 32px;
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.music-button, .quote-button {
+    height: 31px;
+    background-color: #212121;
+    font-size: 20px;
+}
+
+.music-button {
+    width: 89px;
+}
+
+.quote-button {
+    width: 141px;
 }
 
 
