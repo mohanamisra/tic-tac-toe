@@ -1,10 +1,12 @@
 let fist = `<img src="images/fist.png" class="fist">`;
 let swords = `<img src="images/swords.png" class="fist">`;
+let gameButton = document.getElementsByClassName('try-button')[0];
 let boxes = document.getElementsByClassName('box');
 
 let gameboard = document.getElementById('gameboard');
 
 gameboard.addEventListener('click', playerMove);
+gameButton.addEventListener('click', clear);
 
 function playerMove(event) {
   let clickedBox = event.target;
@@ -93,4 +95,13 @@ function checkAIWin() {
     return true;
   else
     return false;
+}
+
+function clear() {
+  let i = 0;
+  while(i < boxes.length) {
+    boxes[i].innerHTML = "";
+    i++;
+  }
+  gameboard.addEventListener('click', playerMove);  
 }
