@@ -15,3 +15,6 @@ issue_2 RESOLVED (27/6/2023): Adding event listener only on gameboard, detecting
 issue_3: AI too primitive. Need to implement minimax function but not make it unbeatable (no game is fun if unbeatable).   
 
 issue_4: Need to pack away functions in modules and objects.
+
+
+Check out the project <a href = "https://mohanamisra.github.io/tic-tac-toe/">RIGHT HERE!</a>.
