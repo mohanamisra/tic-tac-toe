@@ -29,14 +29,18 @@ function aiMove() {
   }
   if(checkPlayerWin()) {
     console.log("you won");
+    winMusic.play();
+    quoteText.textContent = '"You win."';
     gameboard.removeEventListener('click', playerMove);
   }
   else if(checkAIWin()) {
     console.log("you lost");
+    quoteText.textContent = '"You lost."';
     gameboard.removeEventListener('click', playerMove);
   }
   else if(!(checkBoardEmpty())) {
     console.log("draw");
+    quoteText.textContent = '"It is a draw."';
     gameboard.removeEventListener('click', playerMove);
   }
 }
@@ -135,3 +139,19 @@ function changeQuote() {
 
 // MUSIC PLAYING CODE
 
+let musicButton = document.getElementsByClassName('music-button')[0];
+let bgMusic = new Audio('music/bgmusic.mp3');
+let winMusic = new Audio('music/win.mp3');
+
+musicButton.addEventListener('click', toggleMusic);
+
+function toggleMusic() {
+  if(bgMusic.paused == true)
+    bgMusic.play();
+  else
+    bgMusic.pause();
+}
+
+bgMusic.addEventListener('ended', ()=> {
+  bgMusic.play();
+});
