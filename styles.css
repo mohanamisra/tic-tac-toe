@@ -215,12 +215,11 @@ img.master {
     
     .heading {
         flex-direction: row;
-        font-size: 84px;
         gap: 72px;
     }
 
     h1, h3 {
-        font-size: 108px;
+        font-size: 84px;
         font-family: 'ApeMount', 'Caveat Brush', cursive;
     }
 
