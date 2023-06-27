@@ -40,6 +40,8 @@ header {
 
     padding: 0;
     margin: 0;
+
+    color: #212121;
 }
 
 h3 {
@@ -110,6 +112,22 @@ h1 {
 
 /* BUTTONS STYLING */
 
+.try-button {
+    width: 141px;
+    height: 44px;
+    border-radius: 30px;
+    border: none;
+    filter: drop-shadow(3px 3px 4px #212121);
+    background-color: #D1495B;
+    color: #FFF7F8;
+    font-size: 38px;
+    font-family: 'Caveat Brush', cursive;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 7px;
+}
 
 
 /* QUOTE GENERATOR STYLING */
