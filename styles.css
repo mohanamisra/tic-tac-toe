@@ -70,8 +70,9 @@ h1 {
 }
 
 /* GAMEBOARD STYLING */
+
 .gameboard {
-    margin-top: -40px;
+    margin-top: 8px;
 }
 
 .row {
@@ -132,6 +133,7 @@ button {
     align-items: center;
 
     margin-bottom: 32px;
+    margin-top: 16px;
 }
 
 .buttons {
