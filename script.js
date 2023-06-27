@@ -105,3 +105,33 @@ function clear() {
   }
   gameboard.addEventListener('click', playerMove);  
 }
+
+// QUOTE GENERATOR CODE
+
+let quoteButton = document.getElementsByClassName('quote-button')[0];
+let quoteText = document.querySelector('#quote-text');
+quoteButton.addEventListener('click', changeQuote);
+
+let quotes = ['"After fear, the world yields."',
+              '"Do not cower before your strength."',
+              '"Take the way of the warrior."',
+              '"When the sun sets, the brave must rise."',
+              '"Even monkeys fall from trees."',
+              '"Wherever you live, you come to love it."',
+              '"Ten people, ten colours."',
+              `"Overturned water does not return to the tray."`,
+              '"To continue and preserve, is power."',
+              '"The smart hawk hides its talons."',
+              '"Gratitude is the sign of nobility."',
+              '"At the moment of victory, tighten the straps of your helmet."'
+             ]
+
+function changeQuote() {
+  let length = quotes.length;
+  let index = Math.floor(Math.random() * (length - 1));
+  quoteText.textContent = quotes[index];
+  console.log(index);
+}
+
+// MUSIC PLAYING CODE
+
