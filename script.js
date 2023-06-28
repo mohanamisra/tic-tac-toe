@@ -29,6 +29,7 @@ function aiMove() {
   }
   if(checkPlayerWin()) {
     console.log("you won");
+    winMusic.currentTime = 0;
     winMusic.play();
     quoteText.textContent = '"You win."';
     gameboard.removeEventListener('click', playerMove);
