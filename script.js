@@ -134,6 +134,7 @@ function changeQuote() {
   let length = quotes.length;
   let index = Math.floor(Math.random() * (length - 1));
   quoteText.textContent = quotes[index];
+  quoteSound.currentTime = 0;
   quoteSound.play();
   
 }
