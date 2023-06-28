@@ -234,13 +234,13 @@ img.master {
     }
 
     .gameboard {
-        margin-top: 64px;
+        margin-top: 24px;
     }
 
     .box {
-        width: 175px;
-        height: 175px;
-        border: 10px solid #D1495B;
+        width: 120px;
+        height: 120px;
+        border: 8px solid #D1495B;
     }
 
     .box:hover {
