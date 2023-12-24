@@ -244,8 +244,7 @@ img.master {
     }
 
     .box:hover {
-        background-color: #D1495B;
-        opacity: 20%;
+        background-color: #ffb0ba;
     }
 
     .try-button {

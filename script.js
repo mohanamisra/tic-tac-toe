@@ -2,8 +2,9 @@ let fist = `<img src="images/fist.png" class="fist">`;
 let swords = `<img src="images/swords.png" class="fist">`;
 let gameButton = document.getElementsByClassName('try-button')[0];
 let boxes = document.getElementsByClassName('box');
-
 let gameboard = document.getElementById('gameboard');
+
+let hoverSound = new Audio('music/boop.mp3');
 
 gameboard.addEventListener('click', playerMove);
 gameButton.addEventListener('click', clear);
@@ -12,51 +13,95 @@ function playerMove(event) {
   let clickedBox = event.target;
   if (clickedBox.classList.contains('box') && clickedBox.innerHTML === '') {
     clickedBox.innerHTML += fist;
-    aiMove();
+    hoverSound.play();
+    if (checkPlayerWin()) {
+      winMusic.play();
+      gameboard.removeEventListener('click', playerMove);
+    } else if (!(checkDraw())) {
+      aiMove();
+    }
   }
 }
 
 function aiMove() {
-  if(checkBoardEmpty() && !(checkPlayerWin()) && !(checkAIWin())) {
-    let aiBox = boxes[Math.floor(Math.random() * 8)];
+  if (checkDraw()) {
+    quoteText.textContent = "It's a draw!";
+    return;
+  }
 
-    if(aiBox.innerHTML === "") {
-      aiBox.innerHTML += swords;
+  let bestMove = getBestMove();
+  if (bestMove !== null) {
+    boxes[bestMove].innerHTML += swords;
+    if (checkAIWin()) {
+      quoteSound.play();
+      quoteText.textContent = '"AI wins."';
+      gameboard.removeEventListener('click', playerMove);
     }
-    else {
-      aiMove();
-    }
-  }
-  if(checkPlayerWin()) {
-    console.log("you won");
-    winMusic.currentTime = 0;
-    winMusic.play();
-    quoteText.textContent = '"You win."';
-    gameboard.removeEventListener('click', playerMove);
-  }
-  else if(checkAIWin()) {
-    console.log("you lost");
-    quoteText.textContent = '"You lost."';
-    gameboard.removeEventListener('click', playerMove);
-  }
-  else if(!(checkBoardEmpty())) {
-    console.log("draw");
-    quoteText.textContent = '"It is a draw."';
-    gameboard.removeEventListener('click', playerMove);
   }
 }
 
-function checkBoardEmpty(){
-  let i = 0;
-  while(i < boxes.length) {
-    if(boxes[i].innerHTML === "") {
-      return true;
-    }
-    else {
-      i++;
+function getBestMove() {
+  let bestScore = -Infinity;
+  let bestMove = null;
+
+  for (let i = 0; i < boxes.length; i++) {
+    if (boxes[i].innerHTML === '') {
+      boxes[i].innerHTML += swords;
+
+      // MINMAX ALGO SIMULATION
+      let score = minimax(0, false);
+
+      boxes[i].innerHTML = '';
+
+      if (score > bestScore) {
+        bestScore = score;
+        bestMove = i;
+      }
     }
   }
-  return false;
+
+  return bestMove;
+}
+
+function minimax(depth, isMaximizing) {
+  if (checkPlayerWin()) {
+    return -1;
+  } else if (checkAIWin()) {
+    return 1;
+  } else if (checkDraw()) {
+    return 0;
+  }
+
+  if (isMaximizing) {
+    let bestScore = -Infinity;
+    for (let i = 0; i < boxes.length; i++) {
+      if (boxes[i].innerHTML === '') {
+        boxes[i].innerHTML += swords;
+        bestScore = Math.max(bestScore, minimax(depth + 1, !isMaximizing));
+        boxes[i].innerHTML = '';
+      }
+    }
+    return bestScore;
+  } else {
+    let bestScore = Infinity;
+    for (let i = 0; i < boxes.length; i++) {
+      if (boxes[i].innerHTML === '') {
+        boxes[i].innerHTML += fist;
+        bestScore = Math.min(bestScore, minimax(depth + 1, !isMaximizing));
+        boxes[i].innerHTML = '';
+      }
+    }
+    return bestScore;
+  }
+}
+
+function checkDraw() {
+  for (let i = 0; i < boxes.length; i++) {
+    if (boxes[i].innerHTML === '') {
+      return false;
+    }
+  }
+  return true;
 }
 
 function checkPlayerWin() {
@@ -137,7 +182,6 @@ function changeQuote() {
   quoteText.textContent = quotes[index];
   quoteSound.currentTime = 0;
   quoteSound.play();
-  
 }
 
 // MUSIC PLAYING CODE
