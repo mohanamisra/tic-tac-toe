@@ -12,7 +12,8 @@ issue_1 RESOLVED (26/6/2023): checkBoardEmpty() implemented.
 issue_2: Nearby boxes get filled if you click near the edge of the box (only on phone simulator in Chrome dev tools).   
 issue_2 RESOLVED (27/6/2023): Adding event listener only on gameboard, detecting the clicked div (through event.target), and adding mark to that, instead of event listeners on individual divs.   
    
-issue_3: AI too primitive. Need to implement minimax function but not make it unbeatable (no game is fun if unbeatable).   
+issue_3: AI too primitive.     
+issue_3 RESOLVED (25/12/2023): Implemented the minmax algorithm.
 
 
 Check out the project <a href = "https://mohanamisra.github.io/tic-tac-toe/">RIGHT HERE!</a>.
